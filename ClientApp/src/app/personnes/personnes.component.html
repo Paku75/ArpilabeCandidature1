@@ -5,7 +5,8 @@
   <a [routerLink]="['/add']" class="btn btn-primary float-right mb-3">Ajouter</a>
 </p>
 
-<table class="table table-sm table-hover" *ngIf="(personnes$ | async)?.length>0">
+<!-- <table class="table table-sm table-hover" *ngIf="(personnes$ | async)?.length>0"> -->
+<table class="table table-sm table-hover">
   <thead>
     <tr>
       <th>#</th>
@@ -21,7 +22,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let blogPost of (blogPosts$ | async)">
+    <!-- <tr *ngFor="let personne of (personnes$ | async)"> -->
+    <tr>
       <td>1</td>
       <td>Delaure</td>
       <td>Victor</td>
@@ -34,13 +36,13 @@
       <td class="btn btn-danger btn-sm float-right">Delete</td>
     </tr>
 
-    <!-- <tr *ngFor="let blogPost of (blogPosts$ | async)">
-      <td>{{ blogPost.postId }}</td>
-      <td><a [routerLink]="['/blogpost/', blogPost.postId]">{{ blogPost.title }}</a></td>
-      <td>{{ blogPost.creator }}</td>
-      <td>{{ blogPost.dt | date: "dd.MM.y" }}</td>
-      <td><a [routerLink]="['/blogpost/edit/', blogPost.postId]" class="btn btn-primary btn-sm float-right">Edit</a></td>
-      <td><a [routerLink]="" (click)="delete(blogPost.postId)" class="btn btn-danger btn-sm float-right">Delete</a></td>
+    <!-- <tr *ngFor="let personne of (personnes$ | async)">
+      <td>{{ personne.id }}</td>
+      <td><a [routerLink]="['/personne/', personne.id]">{{ personne.nom }}</a></td>
+      <td>{{ personne.prenom }}</td>
+      <td>{{ personne.dateNaissance | date: "dd.MM.y" }}</td>
+      <td><a [routerLink]="['/personne/edit/', personne.id]" class="btn btn-primary btn-sm float-right">Edit</a></td>
+      <td><a [routerLink]="" (click)="delete(personne.id)" class="btn btn-danger btn-sm float-right">Delete</a></td>
     </tr> -->
   </tbody>
 </table>
